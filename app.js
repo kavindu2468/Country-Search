@@ -4,7 +4,8 @@ fetch('https://restcountries.com/v3.1/all')
             .then(data=>{
                 data.forEach(element => {
                     body+=`<div class="col">
-                    <div class="card shadow-sm">
+                    <div class="card shadow-sm" data-aos="fade-up"
+                    data-aos-duration="3000">
                       <img src="${element.flags.png}" alt="">
                       <div class="card-body">
                         <h5>${element.name.common}</h5>
@@ -20,6 +21,7 @@ fetch('https://restcountries.com/v3.1/all')
                 });
                 let row=document.getElementById("row");
                 row.innerHTML=body;
+                AOS.init();
                 console.log(data);
                 
             })
@@ -34,7 +36,8 @@ fetch('https://restcountries.com/v3.1/all')
                 data.forEach(element => {
                     if(element.name.common.includes(txtcountry.value))
                     body+=`<div class="col">
-                    <div class="card shadow-sm">
+                    <div class="card shadow-sm" data-aos="fade-up"
+                    data-aos-duration="3000">
                       <img src="${element.flags.png}" alt="">
                       <div class="card-body">
                         <h5>${element.name.common}</h5>
@@ -50,6 +53,7 @@ fetch('https://restcountries.com/v3.1/all')
                 });
                 let row=document.getElementById("row");
                 row.innerHTML=body;
+                AOS.init();
                 console.log(data);
                 
             })
